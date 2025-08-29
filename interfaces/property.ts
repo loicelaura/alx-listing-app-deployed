@@ -6,3 +6,4 @@ export interface Property {
   price: number;
   image: string;
 }
+
