@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Property } from "@/interfaces/property";
 
 // Define a type for the review data,
 // based on the data provided by your API route.
@@ -64,7 +63,8 @@ const ReviewSection = ({ propertyId }: ReviewSectionProps) => {
             <h4 className="text-md font-semibold text-gray-800">{review.author}</h4>
             <span className="text-sm font-bold text-yellow-500">{review.rating} / 5</span>
           </div>
-          <p className="text-gray-600 italic">"{review.comment}"</p>
+          {/* Escape quotes properly */}
+          <p className="text-gray-600 italic">&quot;{review.comment}&quot;</p>
           <p className="text-xs text-gray-400 mt-2 text-right">{review.date}</p>
         </div>
       ))}

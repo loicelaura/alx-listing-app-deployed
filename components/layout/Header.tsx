@@ -1,10 +1,17 @@
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   return (
     <header className="bg-white shadow-md p-4 flex flex-col gap-4 sm:flex-row sm:justify-between items-center">
       <div className="flex items-center gap-4">
-        <img src="/logo.png" alt="Logo" className="h-10" />
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          className="h-10 w-auto"
+        />
         <nav className="hidden sm:flex gap-4 text-gray-700 text-sm font-medium">
           <a href="#">Rooms</a>
           <a href="#">Mansion</a>
