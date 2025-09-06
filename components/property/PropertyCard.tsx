@@ -1,18 +1,24 @@
-import { Property } from "@/interfaces/property";
 import Link from "next/link";
 import Image from "next/image";
+import { Property } from "@/interfaces/property"; // Assuming this is where your interface is defined
 
-const PropertyCard = ({ property }: { property: Property }) => {
+// Define the props for the component
+interface PropertyCardProps {
+  property: Property;
+}
+
+const PropertyCard = ({ property }: PropertyCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
       {/* Property Image */}
-      <Image
-        src={property.image}
-        alt={property.name}
-        width={400} 
-        height={300} 
-        className="w-full h-48 object-cover"
-      />
+      <div className="relative w-full h-48">
+        <Image
+          src={property.image}
+          alt={property.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
 
       <div className="p-4">
         {/* Property Name as a Link */}
@@ -30,8 +36,11 @@ const PropertyCard = ({ property }: { property: Property }) => {
           ${property.price}
         </p>
 
+      
       </div>
     </div>
   );
 };
 
+
+export default PropertyCard;
