@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState} from "react";
 import PropertyCard from "@/components/property/PropertyCard";
 import { Property } from "@/interfaces/property";
-import Image from "next/image";
+
 
 
 export default function Home() {
